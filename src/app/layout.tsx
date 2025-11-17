@@ -1,35 +1,33 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from 'next/font/google';
-import "./globals.css";
-import ClientBody from "./ClientBody";
-import { Header } from "../components/header"; // Fixed import path to match the actual file location
+// 文件: src/app/layout.tsx
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import type { Metadata } from 'next'
+import { Geist, Geist_Mono } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next' // 加上这行
+import './globals.css'
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const _geist = Geist({ subsets: ["latin"] });
+const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SSEEAA海海 - 海外仓一件代发服务",
-  description: "极致简单的海外仓一件代发服务，让你在复杂的跨境业务中获得对生意的掌控感。",
-};
+  title: 'v0 App',
+  description: 'Created with v0',
+  generator: 'v0.app',
+  icons: {
+    icon: '/icon.svg',
+  },
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="zh-CN">
-      <ClientBody className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Header />
+    <html lang="en">
+      <body className={`font-sans antialiased`}>
         {children}
-      </ClientBody>
+        <Analytics /> {/* 加上这行 */}
+      </body>
     </html>
-  );
+  )
 }

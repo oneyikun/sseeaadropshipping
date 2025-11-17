@@ -1,0 +1,19 @@
+# Dependencies
+/node_modules
+
+# Next.js
+/.next/
+
+# Build output
+/dist
+/build
+
+# Env files
+.env.local
+.env.*.local
+
+# Mac
+.DS_Store
+
+# Bun
+bun.lockb

@@ -47,4 +47,3 @@ export function InfoCard({ title, icon: Icon, children, variant = 'default', id,
     </div>
   )
 }
-</invoke>
