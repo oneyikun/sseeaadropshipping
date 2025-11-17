@@ -10,7 +10,7 @@ interface StepSectionProps {
 
 export function StepSection({ stepNumber, title, description, children, id }: StepSectionProps) {
   return (
-    <Card id={id}>
+    <Card id={id} className="p-10">
       <CardHeader>
         <CardTitle className="text-2xl flex items-center gap-2">
           {stepNumber && <span className="text-blue-600">{stepNumber}</span>}
