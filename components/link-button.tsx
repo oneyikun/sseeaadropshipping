@@ -1,5 +1,5 @@
 import { ExternalLink } from 'lucide-react'
-import { Button } from './ui/button'
+import { Button } from '@/components/ui/button'
 
 interface LinkButtonProps {
   href: string
@@ -13,7 +13,7 @@ export function LinkButton({ href, children, variant = 'outline', className = ''
     <Button
       variant={variant}
       asChild
-      className={`group ${className}`}
+      className={`group shadow-sm ${className}`}
     >
       <a href={href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
         {children}

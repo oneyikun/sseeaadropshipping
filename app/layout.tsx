@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next' // 加上这行
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
+import { ResponsiveGuideLayout } from '@/components/responsive-guide-layout'
+import { UnlockProvider } from '@/lib/unlock-context'
+import { UnlockDebugPanel } from '@/components/unlock-debug-panel'
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
@@ -23,7 +26,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans antialiased bg-[#f5f5f5] text-[rgba(0,0,0,0.87)]`}>
-        {children}
+        <UnlockProvider>
+          <ResponsiveGuideLayout>
+            {children}
+          </ResponsiveGuideLayout>
+          <UnlockDebugPanel />
+        </UnlockProvider>
         <Analytics />
       </body>
     </html>

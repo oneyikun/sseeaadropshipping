@@ -6,7 +6,7 @@ interface CardGroupProps {
 export function CardGroup({ children, columns = 1 }: CardGroupProps) {
   if (columns === 2) {
     return (
-      <div className="grid md:grid-cols-2 gap-3 items-stretch">
+      <div className="grid md:grid-cols-2 gap-4">
         {children}
       </div>
     )

@@ -10,8 +10,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "@mui/material": "7.3.5",
     "@radix-ui/react-separator": "latest",
     "@radix-ui/react-slot": "latest",
+    "@radix-ui/react-toast": "latest",
     "@vercel/analytics": "latest",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

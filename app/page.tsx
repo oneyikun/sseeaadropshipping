@@ -1,11 +1,18 @@
-// 文件: src/app/page.tsx (确保这是 src 目录里的)
-
 "use client"
 
-// 导入“总览页”
-import GuidePage from "./guide/page"
+import { GuideBanner } from "@/components/guide-banner"
+import { GuideNavigation } from "@/components/guide-navigation"
 
-export default function SyntheticV0PageForDeployment() {
-  // 渲染“总览页”
-  return <GuidePage />
+export default function HomePage() {
+  return (
+    <div className="h-full px-4 py-8 space-y-8 bg-background">
+      <div className="flex items-center justify-center">
+        <GuideBanner />
+      </div>
+      
+      <div>
+        <GuideNavigation variant="overview" />
+      </div>
+    </div>
+  )
 }

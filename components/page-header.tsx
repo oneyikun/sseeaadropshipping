@@ -1,4 +1,3 @@
-import { Badge } from './ui/badge'
 import { Type as type, LucideIcon } from 'lucide-react'
 import Link from 'next/link'
 
@@ -15,20 +14,13 @@ interface PageHeaderProps {
 
 export function PageHeader({ stepNumber, title, description }: PageHeaderProps) {
   return (
-    <div className="mb-12">
-      <div className="flex items-start gap-4">
-        <div className="w-16 h-16 rounded-xl bg-[#4682b4] flex items-center justify-center flex-shrink-0">
-          <span className="text-2xl font-bold text-white">{stepNumber}</span>
-        </div>
-        <div className="flex-1">
-          <h1 className="text-4xl font-bold mb-2 text-foreground">
-            {title}
-          </h1>
-          <p className="text-lg text-secondary">
-            {description}
-          </p>
-        </div>
-      </div>
+    <div className="mb-6 md:mb-10">
+      <h1 className="text-xl md:text-2xl font-bold mb-2 text-foreground break-words">
+        {title}
+      </h1>
+      <p className="text-sm md:text-base text-muted-foreground break-words leading-relaxed">
+        {description}
+      </p>
     </div>
   )
 }
